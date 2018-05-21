@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="content">
+    <form #editForm="ngForm" id="ngForm" (ngSubmit)="onSubmit(editForm)">
+      <div>
+        <mat-label class="warn" *ngIf="missingPassword">Please enter your password to confirm these changes</mat-label>
+        <mat-label class="warn" *ngIf="missingFields">Please update at least 1 field</mat-label>
+        <mat-label class="warn" id="warning" *ngIf="(!correctPassword)">Invalid Password!
+          <br>
+          <br>
+        </mat-label>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput name="username" id="username" onClick="this.select();" type="text" ngModel placeholder="{{user.username}}"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput name="email" id="email" onClick="this.select();" type="text" ngModel placeholder="{{user.email}}" />
+        </mat-form-field>
+      </div>
+      <div>
+
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput name="first_name" id="firstName" onClick="this.select();" type="text" ngModel placeholder="{{user.first_name}}"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput name="last_name" id="lastName" onClick="this.select();" type="text" ngModel placeholder="{{user.last_name}}"
+          />
+        </mat-form-field>
+      </div>
+      <br>
+      <br>
+      <div>
+        <mat-form-field floatLabel="always">
+          <mat-label id="passInstruction" [class.warn]="!correctPassword || missingPassword"> To confirm these changes, please enter your password.</mat-label>
+          <input matInput name="password" id="password" type="password" placeholder="Password" ngModel />
+        </mat-form-field>
+      </div>
+      <button mat-button form="ngForm">Submit</button>
+      <button mat-button type="button" (click)="cancelForm()">Cancel</button>
+    </form>
+  </div>
+</div>

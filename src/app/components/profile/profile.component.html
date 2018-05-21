@@ -1,0 +1,54 @@
+<!-- <div class="wrapper">
+  <mat-label class="notification" *ngIf="showNotification">Profile Updated</mat-label>
+  <div class="content">
+    <h2>
+      {{user.username}}
+    </h2>
+    <div class="account-info">
+      <label>{{ user.first_name }}</label>
+      <label>{{ user.last_name }}</label>
+      <br>
+      <label>{{ user.email }}</label>
+    </div>
+    <label>Last active on: {{ lastActivity }}</label>
+    <br>
+    <br>
+    <button mat-button *ngIf="canEditProfile" (click)="goToEditProfile()">Edit Profile</button>
+    <br>
+    <br>
+    <button mat-button *ngIf="canEditProfile" (click)="goToEditPassword()"> Change Password</button>
+  </div>
+</div> -->
+
+
+<div class="app-content">
+
+  <div class="group">
+    <form role="form" style="text-align:center">
+      <mat-label class="notification" *ngIf="showNotification">Profile Updated</mat-label>
+      <div class="content">
+        <h2>
+          {{user.username}}
+        </h2>
+        <div class="account-info">
+          <label>{{ user.first_name }}</label>
+          <label>{{ user.last_name }}</label>
+          <br>
+          <label>{{ user.email }}</label>
+        </div>
+        <label>Last active on: {{ lastActivity }}</label>
+        <br>
+        <br>
+        <button mat-raised-button *ngIf="canEditProfile" (click)="goToEditProfile()">Edit Profile</button>
+        <br>
+        <br>
+        <button mat-button *ngIf="canEditProfile" (click)="goToEditPassword()"> Change Password</button>
+        <br>
+        <br>
+        <button mat-raised-button color="warn" [routerLink]="['/']">Cancel</button>
+        <br>
+        <br>
+      </div>
+    </form>
+  </div>
+</div>

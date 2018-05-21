@@ -1,0 +1,53 @@
+
+mat-card {
+  width: 385px;
+  justify-content: center; 
+  cursor: pointer;
+ 
+}
+
+mat-card-title-group {
+  margin-left: 0;
+}
+mat-card-content {
+  margin: 15px 0 50px;
+}
+mat-card-actions {
+  margin: 25px 0 0 !important;
+}
+mat-card-footer {
+  padding: 0 25px 25px;
+  position: relative;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.content {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100px;
+  line-height: 21px;
+  overflow: hidden;
+  margin-top: 0px;
+  text-align: justify;
+}
+ul {
+  margin-top:0px;
+  padding-left: 0px;
+}
+ul li {	
+  padding: 2%;
+  list-style-type: none; 
+  display: inline-block;
+}
+
+.mat-subheader {
+  display: flex;
+  box-sizing: border-box;
+  padding: 16px;
+  align-items: center;
+}
+h5 {
+  margin-bottom: 5px;
+}

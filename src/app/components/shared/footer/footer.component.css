@@ -1,0 +1,15 @@
+.footer {
+color: gray;
+background-color: #1d262a;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 997;
+font-weight: medium;
+font-size: smaller;
+}
+
+.footer:hover {
+    color: white;
+}

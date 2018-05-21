@@ -1,0 +1,62 @@
+<mat-toolbar class="mat-elevation-z6">
+  <div id="menuTab">
+    <button mat-button [matMenuTriggerFor]="homeMenu">
+      <mat-icon class="material-icons">menu</mat-icon>
+    </button>
+    <mat-menu #homeMenu="matMenu" overlapTrigger="false">
+      <button mat-menu-item routerLink="/" routerLinkActive="active">
+        <mat-icon class="material-icons">home</mat-icon>Home
+      </button>
+      <hr matLine>
+      <button mat-menu-item routerLink="/about" routerLinkActive="active">
+        <mat-icon class="material-icons">info</mat-icon>About
+      </button>
+    </mat-menu>
+  </div>
+  <span>Wiki</span>
+  &nbsp; &nbsp;
+  <button mat-button routerLink="/" routerLinkActive="active">
+    <mat-icon>home</mat-icon>Home</button>
+  &nbsp;
+  <button mat-button routerLink="/about" routerLinkActive="active">
+    <mat-icon>info</mat-icon>About</button>
+  <span class="spacer"></span>
+
+  <div id="search">
+    <form>
+      <div id="iconWrapper">
+        <mat-icon class="black-icon">search</mat-icon>
+        <mat-form-field floatLabel="never">
+          <input name=s type="text" matInput [matAutocomplete]="auto" (keyup)="sendQuery($event, search)" (keyup.enter)="changePage(search); search=''"
+            [(ngModel)]="search" />
+          <mat-placeholder>Search...</mat-placeholder>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let item of subject | async" [value]="item.route" routerLink="/pages/{{item.route}}" (click)="value=''; search=''">
+              {{ item.title }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+
+  <div id="status-buttons">
+    <div *ngIf="(loggedIn$ | async)" id="loginFix">
+      <div id="drop-down">
+        <mat-menu #menu="matMenu" xPosition="before" id="UserMenu" overlapTrigger="false">
+          <button mat-menu-item routerLink="/profile/{{userid$ | async}}">{{firstName$ | async}}</button>
+          <hr matLine>
+          <button mat-menu-item routerLink="/logout" routerLinkActive="active">Logout</button>
+        </mat-menu>
+      </div>
+      <mat-icon id="UserFace" [matMenuTriggerFor]="menu">face
+      </mat-icon>
+      &nbsp;
+    </div>
+    <div *ngIf="!(loggedIn$ | async)">
+      <button mat-raised-button routerLink="/login" routerLinkActive="active">Login</button>
+      &nbsp; &nbsp;
+      <button mat-raised-button routerLink="/signup" routerLinkActive="active">Sign up</button>
+    </div>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,77 @@
+.content {
+  margin-right: 20%;
+  margin-left: 20%;
+  line-height: 2.5em;
+  font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-top: 5%;
+  text-align: justify;
+}
+
+ul {
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+}
+
+mat-card-subtitle {
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  width: 50px;
+  height: 50px; 
+}
+
+li:hover {
+  width: 60px;
+  text-align: center;
+}
+
+.mat-icon {
+  padding: 12px;
+  color: white;
+}
+
+.mat-icon:hover {
+ color: #f15c66;
+}
+
+.sidestuff {
+  position: fixed;
+  right: 9.5%;
+  top: 14%;
+  width: 60px;
+  height: 65px;
+  overflow: inherit;
+  align-items: center;
+  z-index: 997;
+}
+.revisions {
+  color: rgb(110, 109, 109);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.revisions:hover {
+  color: white;
+}
+
+.mat-option {
+  line-height: 32px;
+  height: auto;
+  padding-top: 0px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(84, 84, 99, 0.144);
+}
+
+.mat-option:hover{
+  background-color: #455A64;
+}

@@ -1,0 +1,18 @@
+<div class="app-content">
+  <div class="group">
+    <app-alert></app-alert>
+    <form role="form" style="text-align:center" (submit)="add()">
+      <br>
+      <mat-input-container>
+        <input matInput type="text" required [(ngModel)]="model.title" id="title" name="title">
+        <mat-placeholder>
+          <i class="material-icons app-input-icon">book</i>Title
+        </mat-placeholder>
+      </mat-input-container>
+      <br>
+      <button mat-raised-button color="primary" type="submit" name="action">Create</button>
+      <button mat-raised-button (click)="goBack()" id="cancel">Cancel</button>
+      <br>
+    </form>
+  </div>
+</div>

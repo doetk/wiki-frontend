@@ -1,0 +1,58 @@
+<div class="app-content">
+
+  <div class="group">
+    <app-alert></app-alert>
+    <form role="form" style="text-align:center" (submit)="signup()">
+      <br>
+      <mat-input-container>
+        <input matInput type="text" required [(ngModel)]="user.username" id="username" name="username" [formControl]="username" pattern=".{5,}">
+        <mat-placeholder>
+          <i class="material-icons app-input-icon">face</i>Username
+        </mat-placeholder>
+        <mat-error *ngIf="username.invalid">{{getUserNameErrorMessage()}}</mat-error>
+      </mat-input-container>
+      <br>
+      <br>
+      <mat-input-container>
+        <input matInput type="password" required [(ngModel)]="user.psw" id="psw" name="psw" [formControl]="psw">
+        <mat-placeholder>
+          <i class="material-icons app-input-icon">lock_open</i>Password
+        </mat-placeholder>
+        <mat-error *ngIf="psw.invalid">{{getPaswordErrorMessage()}}</mat-error>
+      </mat-input-container>
+      <br>
+      <br>
+      <mat-input-container>
+        <input matInput type="first" required [(ngModel)]="user.first" id="first" name="first" [formControl]="first">
+        <mat-placeholder>
+          <i class="material-icons app-input-icon">face</i>First Name
+        </mat-placeholder>
+        <mat-error *ngIf="psw.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+      </mat-input-container>
+      <br>
+      <br>
+      <mat-input-container>
+        <input matInput type="last" required [(ngModel)]="user.last" id="last" name="last" [formControl]="last">
+        <mat-placeholder>
+          <i class="material-icons app-input-icon">face</i>Last name
+        </mat-placeholder>
+        <mat-error *ngIf="psw.invalid">{{getLastNameErrorMessage()}}</mat-error>
+
+      </mat-input-container>
+      <br>
+      <br>
+      <mat-input-container>
+        <input matInput type="email" required [(ngModel)]="user.eml" id="email" name="email" [formControl]="email">
+        <mat-placeholder>
+          <i class="material-icons app-input-icon">email</i>Email
+        </mat-placeholder>
+        <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-input-container>
+      <br>
+      <br>
+      <button class="signup" mat-raised-button type="submit" name="action">Sign up</button>
+      <button class="cancel" mat-raised-button (click)="goBack()">Cancel</button>
+      <br>
+    </form>
+  </div>
+</div>

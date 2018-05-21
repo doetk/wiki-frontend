@@ -1,0 +1,4 @@
+<div class="myalert" *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">
+  <mat-icon>error</mat-icon>
+  {{message.text}}
+</div>

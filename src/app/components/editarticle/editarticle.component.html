@@ -1,0 +1,27 @@
+<app-alert></app-alert>
+<h1>{{(page$ | async).title}}</h1>
+
+<p>
+  API Route: {{(page$ | async).route}}
+  <br /> Author Name: {{(page$ | async).authorFirstName}}
+  <br /> Revision ID: {{(page$ | async).revisionid}}
+  <br /> Modified Date: {{(page$ | async).modified}}
+  <br />
+</p>
+<hr />
+
+<div>
+  <mat-card>
+    <h3>Edit Article</h3>
+    <form (ngSubmit)="edit()">
+      <div [froalaEditor] [(froalaModel)]="editorContent" (ngSubmit)="edit()">
+
+      </div>
+      <hr />
+      <button mat-raised-button color="primary">Save</button>
+      <button mat-raised-button (click)="goBack()" color="primary" id="cancel">Cancel</button>
+    </form>
+
+  </mat-card>
+
+</div>

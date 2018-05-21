@@ -1,0 +1,45 @@
+<div class="sidestuff">
+  <ul>
+    <li style="background-color: #556f7b">
+      <div>
+        <a (click)="current()" title="Current Revision">
+          <mat-icon>forward</mat-icon>
+        </a>
+      </div>
+    </li>
+    <br>
+    <li style="background-color: #2d3b41">
+      <mat-menu #menu="matMenu" overlapTrigger="false">
+        <mat-option *ngFor="let route of (page$ | async).revisions | slice:1" [value]="route.route">
+          <a class="revisions" routerLink="/pages/{{(page$ | async).title}}/revisions/{{route.RevisionID}}">Rivision: {{route.route.split('/').reverse()[0]}}</a>
+        </mat-option>
+      </mat-menu>
+      <a [matMenuTriggerFor]="menu" title="Previous Revisions">
+        <mat-icon>list</mat-icon>
+      </a>
+    </li>
+
+    <li>
+      <share-container direction="vertical" [expandable]="false" [textEnabled]="false" [platforms]="['twitter','facebook']">
+      </share-container>
+    </li>
+  </ul>
+</div>
+
+<mat-card>
+  <h1 class="title">{{(page$ | async).title}}</h1>
+  <mat-card-subtitle class="meta">
+    API Route: {{(page$ | async).route}}
+    <br /> Author Name: {{(page$ | async).authorFirstName}}
+    <br /> Revision ID: {{(page$ | async).revisionid}}
+    <br /> Modified Date: {{(page$ | async).modified}}
+    <br />
+  </mat-card-subtitle>
+
+
+  <div class="content">
+    <div [froalaView]="pagedata"></div>
+  </div>
+</mat-card>
+<hr />
+<button (click)="goBack()" mat-raised-button color="primary">Back</button>

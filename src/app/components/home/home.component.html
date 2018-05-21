@@ -1,0 +1,32 @@
+<div>
+  <h1>Welcome to the {{title}} App</h1>
+  <h2 *ngIf="(loggedIn$ | async)">
+    <h3>Hi {{firstName$ | async}}! You're now logged in</h3>
+  </h2>
+  <ul>
+    <li *ngFor="let page of (pages$ | async)">
+      <mat-card routerLink="/pages/{{page.shortRoute}}">
+        <mat-card-title-group>
+          <mat-card-title>{{ page.title }}</mat-card-title>
+        </mat-card-title-group>
+        <mat-card-content>
+          <div class="content">
+            <p class="link" [froalaView]="page.description"></p>
+          </div>
+        </mat-card-content>
+        <mat-card-footer class="footer">
+          <h5 _ngcontent-c15="" class="mat-subheader" mat-subheader="">Written By:</h5>
+          <span>
+            {{page.authorFirstName}} {{page.authorLastName}}
+          </span>
+        </mat-card-footer>
+      </mat-card>
+    </li>
+
+  </ul>
+  <p *ngIf="(loggedIn$ | async)">
+    <button mat-raised-button color="primary" [routerLink]="['/addarticle']">Add New Article
+      <mat-icon>edit</mat-icon>
+    </button>
+  </p>
+</div>

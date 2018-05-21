@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`userReducer: REQ_LOGIN should make loginInProgress to true 1`] = `
+Object {
+  "email": undefined,
+  "first_name": undefined,
+  "lastLoginFailed": false,
+  "lastLogoutFailed": false,
+  "last_name": undefined,
+  "loggedIn": false,
+  "loginInProgress": true,
+  "logoutInProgress": false,
+  "password": "5432",
+  "signedUp": false,
+  "signupInProgress": false,
+  "userid": undefined,
+  "username": "test",
+}
+`;
+
+exports[`userReducer: REQ_SIGNUP should make signUpProgress to true 1`] = `
+Object {
+  "email": "abc@def.gh",
+  "first_name": "theo",
+  "lastLoginFailed": false,
+  "lastLogoutFailed": false,
+  "last_name": "Sam",
+  "loggedIn": false,
+  "loginInProgress": false,
+  "logoutInProgress": false,
+  "password": "123",
+  "signedUp": false,
+  "signupInProgress": true,
+  "userid": undefined,
+  "username": "test",
+}
+`;
+
+exports[`userReducer: undefined action should return the default state 1`] = `
+Object {
+  "email": undefined,
+  "first_name": undefined,
+  "lastLoginFailed": false,
+  "lastLogoutFailed": false,
+  "last_name": undefined,
+  "loggedIn": false,
+  "loginInProgress": false,
+  "logoutInProgress": false,
+  "signedUp": false,
+  "signupInProgress": false,
+  "userid": undefined,
+  "username": undefined,
+}
+`;

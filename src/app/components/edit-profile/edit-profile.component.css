@@ -1,0 +1,41 @@
+.wrapper {
+  display: grid;
+  margin-top: 10%;
+  grid-template-rows: 1fr;
+  grid-template-columns: .25fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas: "profileImage form";
+}
+
+.form {
+  max-width: 33%;
+  grid-area: form;
+  display: inline;
+  justify-content: space-around;
+  margin-left: 10%;
+}
+
+.labels {
+  display: flex;
+  justify-content: left;
+  align-items: right;
+}
+
+.content {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+button {
+  color: white;
+  background-color: rgb(99, 115, 139)
+}
+
+mat-label {
+  white-space: normal !important;
+  /* allows overflow for long labels */
+}
+
+  .warn {
+    color: red;
+  }
